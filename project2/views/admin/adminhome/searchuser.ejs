@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=6.0">
+    <title>Search</title>
+   
+</head>
+<body>
+    <fieldset>
+        <legend>Search User</legend>
+        <br>
+        <form>
+            <input type="text" name="key" id="key" placeholder="Search here">
+            <input type="button" id="ajaxSearch" value="Search">
+        </form>
+        <br>
+        <table border="1" id="myTable">
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Contact No</th>
+                    <th>NID</th>
+                    <th>Gender</th>
+                    <th>User Type</th>
+                    <th>Address</th>
+                    
+                </tr>
+            </tr>
+            
+        </table>
+    </fieldset>
+    <p class="see"></p>
+    <p class="pee"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ajaxSearch").click((e) => {
+                e.preventDefault();
+                var search = $("#key").val();
+                $(this).closest('myTable').remove();
+                $.ajax({
+                    url: "/adminhome/searchuser",
+                    data: { search: search },
+                    method: "POST",
+                    contentType: "application/x-www-form-urlencoded",
+                    success: function(data){
+                        var results = data.results;
+                        $(".row").remove();
+                        for(var i=0; i<results.length; i++){
+                            $("#myTable").append(
+                                "<tr class='row'>"+
+                                    "<td>"+results[i].ID+"</td>"+
+                                    "<td>"+results[i].Name+"</td>"+
+                                    "<td>"+results[i].UserName+"</td>"+
+                                    "<td>"+results[i].Email+"</td>"+
+                                    "<td>"+results[i].ContactNO+"</td>"+
+                                    "<td>"+results[i].NID+"</td>"+
+                                    "<td>"+results[i].Gender+"</td>"+
+                                    "<td>"+results[i].UserType+"</td>"+
+                                     "<td>"+results[i].Address+"</td>"
+                                +"</tr>"
+                            );
+                        }
+                        // $(".see").html(results[0].username);
+                        // $(".pee").html(results[0].salary);
+                        
+                    }, error: function(err) {
+                        alert(err);
+                    }
+                });
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>
+

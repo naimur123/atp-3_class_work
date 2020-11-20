@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ManagerList</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">  
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+					<th>Email</th>
+					<th>Contact No</th>
+					<th>NID</th>
+					<th>Gender</th>
+					<th>User Type</th>
+                    <th>Address</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <% 
+        users.forEach( function(std){ %>
+        <tr>
+            <td><%= std.ID %></td>
+            <td><%= std.Name %></td>
+            <td><%= std.UserName %></td>
+            <td><%= std.Email %></td>
+            <td><%= std.ContactNO %></td>
+            <td><%= std.NID %></td>
+            <td><%= std.Gender %></td>
+            <td><%= std.UserType %></td>
+            <td><%= std.Address %></td>
+           
+        </tr>
+    <%
+        }); 
+    %>
+    </tbody>
+  </table>
+</div>
+<a class="text-info" href="/adminhome">Back</a>
+
+</body>
+</html>
+
+
+
+<!--<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+ 
+<body class="bg-info">
+    <div class="container">
+        <div class="jumbotron"></div>
+    </div>
+    <div class="container">
+        <div class="ZipDatatable">
+            <table id="ZipcodesTable" class="table table-bordered table-sm">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+					<th>Email</th>
+					<th>Contact No</th>
+					<th>NID</th>
+					<th>Gender</th>
+					<th>User Type</th>
+					<th>Address</th>
+					
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+       $('#ZipcodesTable').DataTable({
+            "paging": true,
+            "pageLength": 10,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "data":"json",
+                "type": "post",
+                "url": "/managerlist"
+            },
+                "columns":
+                    [
+                        { "data": "ID" },
+                        { "data": "Name" },
+                        { "data": "UserName" },
+						{ "data": "Email" },
+						{ "data": "ContactNo" },
+						{ "data": "NID" },
+						{ "data": "Gender" },
+						{ "data": "UserType" },
+						{ "data": "Address" },
+                    ]
+            
+        });
+    });
+</script>
+ 
+</html> -->
