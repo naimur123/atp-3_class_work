@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home page</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/abc/css/style.css">
+<style>
+	.card {
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	  max-width: 300px;
+	  margin: auto;
+	  text-align: center;
+	  font-family: arial;
+	  margin-top: 5%;
+	  margin-left: 28%;
+	  background-color: aquamarine;
+	}
+	
+	.title {
+	  color: grey;
+	  font-size: 18px;
+	}
+	a {
+	  text-decoration: none;
+	  font-size: 22px;
+
+	}
+	
+	button:hover{
+	  opacity: 0.7;
+	  background-color: black;
+	}
+	</style>
+</head>
+<body>
+	  <div class="container">
+		<ul class="nav nav-pills">
+		  <li class="nav-item">
+			<a class="nav-link" href="/user/addadmin">Add Admin</a>
+			
+		  </li>
+		  <br>
+		  <li class="nav-item">
+			<a class="nav-link" href="/user/createmanager">Add Manager</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">SEE ALL LIST</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="/adminhome/adminlist">Admin List</a>
+				<a class="dropdown-item" href="/adminhome/managerlist">Manager List</a>
+				<a class="dropdown-item" href="/adminhome/userlist">User List</a>
+				<a class="dropdown-item" href="/adminhome/transaction">Transaction History</a>
+				<a class="dropdown-item" href="/adminhome/salarylist">Salary List</a>
+			</div>
+		  </li>
+		  <li class="nav-item">
+			<li class="nav-item">
+				<a class="nav-link" href="/adminhome/searchuser">Search User</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Messages</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/adminhome/sendmsg">Send</a>
+					<a class="dropdown-item" href="/adminhome/receivedmsg">Received</a>
+				</div>
+			  </li>
+		
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/logout">Log Out</a>
+		</li>
+		  
+		</ul>
+	  </div>
+	  <div class="card" text-align="center">
+		<h1><%= name %></h1>
+		<div style="margin: 24px 0;">
+		  <a href="#"><i class="fa fa-dribbble"></i></a> 
+		  <a href="#"><i class="fa fa-twitter"></i></a>  
+		  <a href="#"><i class="fa fa-linkedin"></i></a>  
+		  <a href="#"><i class="fa fa-facebook"></i></a> 
+		</div>
+		<p><button><a href="/adminhome/profile">Profile</a></button></p>
+	  </div>
+
+
+</body>
+</html>

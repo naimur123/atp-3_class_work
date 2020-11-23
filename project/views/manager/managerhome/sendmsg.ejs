@@ -1,0 +1,38 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Send Message</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>Send Message</h1>
+ 
+  <form method="POST">
+    <div class="form-group">
+      <label for="usr2">Send To:</label>
+      <input type="text"  class="form-control" id="usr2" name="to" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+        <label for="comment">Message:</label>
+        <textarea class="form-control" rows="3" id="comment" name="msg"></textarea>
+      </div>
+	
+	
+	
+	<button type="submit" id="submit" class="btn btn-primary">Submit</button><br>
+    <a href="/managerhome">Back</a>
+
+  </form>
+</div>
+
+
+</body>
+</html>

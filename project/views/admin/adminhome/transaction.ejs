@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <script>
+ 
+    self.information = function() {
+   
+      $.ajax({
+          type: 'GET',
+          url: 'adminhome/transaction',
+          contentType: 'application/json; charset=utf-8'
+      })
+      .done(function(result) {
+        console.log(result);
+      })
+      .fail(function(xhr, status, error) {
+          console.log(error);
+      })
+      
+    }
+    </script>
+</body>
+</html>
